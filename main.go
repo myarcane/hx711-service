@@ -17,6 +17,8 @@ var upgrader = websocket.Upgrader{
 	CheckOrigin:     func(r *http.Request) bool { return true },
 }
 
+var cmd *exec.Cmd
+
 func main() {
 	http.HandleFunc("/ws", cmdToResponse)
 
@@ -28,6 +30,8 @@ func main() {
 }
 
 func cmdToResponse(w http.ResponseWriter, r *http.Request) {
+	log.Println("cmd to response")
+	
 	ws, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		w.Write([]byte(fmt.Sprintf("", err)))
@@ -35,7 +39,6 @@ func cmdToResponse(w http.ResponseWriter, r *http.Request) {
 	}
 	defer ws.Close()
 
-	// discard received messages
 	go func(c *websocket.Conn) {
 		for {
 			if _, _, err := c.NextReader(); err != nil {
@@ -47,8 +50,16 @@ func cmdToResponse(w http.ResponseWriter, r *http.Request) {
 
 	ws.WriteMessage(1, []byte("Starting...\n"))
 
+	if cmd != nil {
+		if err := cmd.Process.Kill(); err != nil {
+			log.Fatal("failed to kill process: ", err)
+		}
+	}
+
+	log.Println("exec ./prog command")
+	cmd = exec.Command("./prog")
+
 	// execute and get a pipe
-	cmd := exec.Command("./prog")
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
 		log.Println(err)
@@ -67,6 +78,7 @@ func cmdToResponse(w http.ResponseWriter, r *http.Request) {
 
 	s := bufio.NewScanner(io.MultiReader(stdout, stderr))
 	for s.Scan() {
+		log.Println("weight", string(s.Bytes()))
 		ws.WriteMessage(1, s.Bytes())
 	}
 
