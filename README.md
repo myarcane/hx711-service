@@ -3,24 +3,22 @@
 A websocket service written in GO exposing weight outputs of hx711 load cell amplifier.
 
 ## Hardware
-![IMG_6573](https://github.com/myarcane/hx711-service/assets/1671293/113b589c-7e12-451d-b6d1-01a76092b357)
-The service needs the proper hardware setup to work.
+<img src="https://github.com/myarcane/hx711-service/assets/1671293/113b589c-7e12-451d-b6d1-01a76092b357" alt="Image" style="max-width: 300px;" />
 
 - A [load cell high precision](https://www.amazon.ca/dp/B077YHNNCP?psc=1&ref=ppx_yo2ov_dt_b_product_details).
-  Mine is a 100kg load cell capacity but it will also work with other capacity
+  Mine is a 100kg load cell capacity but it will also work with other capacity.
 - A [hx711 load cell amplifier](https://www.amazon.ca/-/fr/Oiyagai-capteurs-pes%C3%A9e-double-pr%C3%A9cision/dp/B0779RZYF1/ref=sr_1_31)
 - I used a [Raspberry pi 3 B+](https://www.pishop.ca/product/raspberry-pi-3-model-b-plus/) but it can probably work with newer Raspberry pi versions
 
 ### Hardware wiring
-
-- The hx711 VCC is connected to Raspberry pi 3.3V pin
-- The hx711 Data (DT) is connected to Raspberry pi GPIO pin 5
-- The hx711 Clock (SCK) is connected to Rapsberry pi GPIO pin 6
-- The hx711 ground (GND) is connected to Raspberry pi GPIO ground
 - The load cell black cable is connected to hx711 E+
 - The load cell red cable is connected to hx711 E-
 - The load cell green cable is connected to hx711 A-
 - The load cell white cable is connected to hx711 A+
+- The hx711 VCC is connected to Raspberry pi 3.3V pin
+- The hx711 Data (DT) is connected to Raspberry pi GPIO pin 5
+- The hx711 Clock (SCK) is connected to Rapsberry pi GPIO pin 6
+- The hx711 ground (GND) is connected to Raspberry pi GPIO ground
 
 ### Main dependency
 
