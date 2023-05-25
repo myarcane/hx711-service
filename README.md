@@ -5,6 +5,7 @@ A websocket service written in GO exposing weight outputs of hx711 load cell amp
 ## Hardware
 <img src="https://github.com/myarcane/hx711-service/assets/1671293/113b589c-7e12-451d-b6d1-01a76092b357" width="50%" height="50%" />
 
+
 - A [load cell high precision](https://www.amazon.ca/dp/B077YHNNCP?psc=1&ref=ppx_yo2ov_dt_b_product_details).
   Mine is a 100kg load cell capacity but it will also work with other capacity.
 - A [hx711 load cell amplifier](https://www.amazon.ca/-/fr/Oiyagai-capteurs-pes%C3%A9e-double-pr%C3%A9cision/dp/B0779RZYF1/ref=sr_1_31)
