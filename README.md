@@ -12,14 +12,14 @@ A websocket service written in GO exposing weight outputs of hx711 load cell amp
 - I used a [Raspberry pi 3 B+](https://www.pishop.ca/product/raspberry-pi-3-model-b-plus/) but it can probably work with newer Raspberry pi versions
 
 ### Hardware wiring
-- The load cell black cable is connected to hx711 E+
-- The load cell red cable is connected to hx711 E-
-- The load cell green cable is connected to hx711 A-
-- The load cell white cable is connected to hx711 A+
-- The hx711 VCC is connected to Raspberry pi 3.3V pin
-- The hx711 Data (DT) is connected to Raspberry pi GPIO pin 5
-- The hx711 Clock (SCK) is connected to Rapsberry pi GPIO pin 6
-- The hx711 ground (GND) is connected to Raspberry pi GPIO ground
+- The load cell **red cable** is connected to hx711 **E+*
+- The load cell **black cable** is connected to hx711 **E-**
+- The load cell **green cable** is connected to hx711 **A-**
+- The load cell **white cable** is connected to hx711 **A+**
+- The hx711 **VCC** is connected to Raspberry pi **3.3V pin**
+- The hx711 **Data** (DT) is connected to Raspberry pi **GPIO pin 5**
+- The hx711 **Clock** (SCK) is connected to Rapsberry pi **GPIO pin 6**
+- The hx711 ground **(GND)** is connected to Raspberry pi **GPIO ground**
 
 ### Main dependency
 
