@@ -19,7 +19,7 @@ A websocket service written in GO exposing weight outputs of hx711 load cell amp
 - The hx711 **VCC** is connected to Raspberry pi **3.3V pin**
 - The hx711 **Data** (DT) is connected to Raspberry pi **GPIO pin 5**
 - The hx711 **Clock** (SCK) is connected to Rapsberry pi **GPIO pin 6**
-- The hx711 ground **(GND)** is connected to Raspberry pi **GPIO ground**
+- The hx711 **ground** (GND) is connected to Raspberry pi **GPIO ground**
 
 ### Main dependency
 
