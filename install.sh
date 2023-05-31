@@ -6,7 +6,7 @@ echo "Cleaning hx711 dependency"
 rm -f prog
 rm -rf hx711
 echo "Cloning hx711 dependency"
-git clone git@github.com:endail/hx711.git
+git clone https://github.com/myarcane/hx711
 cd hx711
 echo "Installing hx711 dependency"
 sudo ./install-deps.sh
