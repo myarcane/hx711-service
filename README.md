@@ -7,7 +7,7 @@ A websocket service written in GO exposing weight outputs of hx711 load cell amp
 
 
 - A [load cell high precision](https://www.amazon.ca/dp/B077YHNNCP?psc=1&ref=ppx_yo2ov_dt_b_product_details).
-  Mine is a 100kg load cell capacity but it will also work with other capacity.
+  Mine is a 100kg load cell capacity but it will also work with other capacities.
 - A [hx711 load cell amplifier](https://www.amazon.ca/-/fr/Oiyagai-capteurs-pes%C3%A9e-double-pr%C3%A9cision/dp/B0779RZYF1/ref=sr_1_31)
 - I used a [Raspberry pi 3 B+](https://www.pishop.ca/product/raspberry-pi-3-model-b-plus/) but it can probably work with newer Raspberry pi versions
 
