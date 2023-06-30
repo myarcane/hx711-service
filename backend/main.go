@@ -29,6 +29,7 @@ func main() {
 	}
 }
 
+
 func cmdToResponse(w http.ResponseWriter, r *http.Request) {
 	log.Println("cmd to response")
 	
@@ -50,11 +51,7 @@ func cmdToResponse(w http.ResponseWriter, r *http.Request) {
 
 	ws.WriteMessage(1, []byte("Starting...\n"))
 
-	if cmd != nil {
-		if err := cmd.Process.Kill(); err != nil {
-			log.Fatal("failed to kill process: ", err)
-		}
-	}
+    killCmd()
 
 	log.Println("exec ./prog command")
 	cmd = exec.Command("./prog")
@@ -83,9 +80,19 @@ func cmdToResponse(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := cmd.Wait(); err != nil {
+		killCmd()
 		log.Println(err)
 		return
 	}
 
 	ws.WriteMessage(1, []byte("Finished\n"))
+}
+
+func killCmd() {
+	if cmd != nil {
+		if err := cmd.Process.Kill(); err != nil {
+			log.Println("failed to kill process: ", err)
+		}
+		cmd = nil
+	}
 }

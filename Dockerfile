@@ -10,8 +10,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Install GO hx711 service
-COPY *.go ./
-COPY go.mod go.sum ./
+COPY backend/. ./
 RUN go mod download
 RUN go build -o main .
 
